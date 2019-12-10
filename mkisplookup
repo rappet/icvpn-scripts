@@ -17,7 +17,7 @@ class SQLFormatter(Formatter):
         """
         self.config.append("% " + "\n% ".join(comment.split("\n")))
 
-    """Formatter for PostgreSQL"""
+    """Formatter for SQL"""
     def add_data(self, community, networks):
         self.config.append("INSERT INTO isps (network, isp) VALUES%s;" % ''.join([
             "\n    ('%s', '%s')" % (network, community) for network in networks
